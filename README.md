@@ -1,102 +1,163 @@
-== Project Lucifer  2.0 ==
-A next-generation, voice-activated personal assistant designed to run locally on your PC. Lucifer 2.0 is highly intelligent, personalized, and extensible, prioritizing user privacy and control above all else.
+# 🔥 Project Lucifer 2.0
 
-Overview
-Project Lucifer 2.0 is a self-contained, intelligent agent that augments your interaction with your digital and physical environment. Unlike mainstream cloud-based assistants, Lucifer 2.0 performs all core AI processing—understanding your voice and thinking—locally on your machine.
+**A next-generation, voice-activated personal assistant designed to run locally on your PC.**  
+Lucifer 2.0 is highly intelligent, deeply personalized, extensible, and built with privacy-first principles.
 
-It leverages a constant internet connection to fetch real-time data and control external devices, but your personal data, voice patterns, and learned behaviors never leave your computer. The system is designed to continuously learn from you, becoming a truly personalized assistant that adapts to your unique voice, vocabulary, and habits.
+---
 
-Key Features
-Voice-Activated Interface: Hands-free operation through a customizable wake word (default: "Jarvis").
+## 🧠 Overview
 
-Deep Personalization: Designed for a single user, the system learns your unique voice, accent, and command patterns for unparalleled accuracy.
+**Project Lucifer 2.0** is a self-contained, intelligent voice agent that augments your interaction with both your digital and physical environment. Unlike mainstream cloud-based assistants, **Lucifer 2.0** performs all core AI processing—understanding, reasoning, and response generation—**locally** on your machine.
 
-Continuous On-Device Learning: The AI models improve over time by being fine-tuned on your interaction data, which is stored and processed locally.
+It uses an internet connection for real-time information retrieval and smart device control, but **your personal data, voice, and learned behaviors never leave your computer**. The system continuously adapts to your unique usage, becoming a highly personalized assistant over time.
 
-Hybrid Online/Offline Processing: Core AI logic runs locally for privacy and speed, while an active internet connection is used for real-time data and controlling external services.
+---
 
-Extensible Task Automation: Control local PC applications, perform complex web queries, and integrate seamlessly with smart home (IoT) devices via platforms like Home Assistant.
+## ✨ Key Features
 
-Modular & Open-Source: Built with a preference for open-source technologies, allowing for transparency, customization, and easy upgrades.
+- **🎙️ Voice-Activated Interface**  
+  Hands-free operation through a customizable wake word (default: `"Jarvis"` — feel free to change it to `"Lucifer"` or anything else).
+  
+- **🧬 Deep Personalization**  
+  Built for a single user. Learns your voice, accent, and vocabulary for maximum accuracy.
 
-Architecture & Technology Stack
-Lucifer 2.0 is built on a classic, modular voice-AI pipeline. All core components run locally, ensuring privacy and responsiveness.
+- **📚 Continuous On-Device Learning**  
+  Fine-tunes locally using your interaction data. No cloud training required.
 
-Wake Word Detection: A lightweight engine listens for the activation command.
+- **🔌 Hybrid Online/Offline Processing**  
+  Core logic runs locally. Internet is used only for fetching real-time data or external APIs/devices.
 
-Speech-to-Text (STT): Whisper transcribes spoken audio to text.
+- **⚙️ Extensible Task Automation**  
+  Control local apps, automate workflows, perform web queries, and interact with smart home devices (via Home Assistant, etc.).
 
-Natural Language Understanding (NLU): A local LLM like Llama (run via Ollama or GPT4All) interprets intent.
+- **🧩 Modular & Open Source**  
+  Full control. Built using open-source components for transparency, hacking, and community-driven upgrades.
 
-Action Execution: A Python-based engine performs tasks.
+---
 
-Text-to-Speech (TTS): Bark converts text responses into natural-sounding speech.
+## 🏗️ Architecture & Tech Stack
 
-Primary Language: Python 3.8+
+Lucifer 2.0 is powered by a modular AI voice pipeline, all running on-device:
 
-Dialogue Management: LangChain
+| Component             | Technology                          |
+|----------------------|--------------------------------------|
+| Wake Word Detection  | Lightweight custom trigger engine    |
+| STT (Speech-to-Text) | [Whisper](https://github.com/openai/whisper) by OpenAI |
+| NLU (Understanding)  | Local LLMs via [Ollama](https://ollama.com) / [GPT4All](https://gpt4all.io) |
+| Dialogue Management  | [LangChain](https://www.langchain.com/) |
+| TTS (Text-to-Speech) | [Bark](https://github.com/suno-ai/bark) for natural voice responses |
+| Task Engine          | Native Python 3.8+ automation layer |
 
-System Requirements
-Recommended Hardware
-OS: Windows 11 or Ubuntu 22.04 LTS (64-bit)
+---
 
-CPU: Modern multi-core processor (e.g., AMD Ryzen 7, Intel Core i7)
+## 🖥️ System Requirements
 
-GPU: NVIDIA RTX series GPU with 6GB+ VRAM (highly recommended for performance)
+### 💻 Recommended Hardware
 
-RAM: 16 GB+
+- **OS:** Windows 11 or Ubuntu 22.04 LTS (64-bit)
+- **CPU:** AMD Ryzen 7 / Intel Core i7 (multi-core)
+- **GPU:** NVIDIA RTX series (6GB+ VRAM)
+- **RAM:** 16 GB+
+- **Storage:** 100+ GB free (for models, logs, cache)
+- **Peripherals:** High-quality USB microphone
 
-Storage: 100+ GB of free space for models and data logs.
+### 🧪 Minimum (CPU-only) Specs
 
-Peripherals: A high-quality USB microphone.
+- **CPU:** Modern quad-core
+- **RAM:** 8–16 GB
+- **Storage:** 100+ GB
 
-Minimum Hardware (CPU-only)
-CPU: Modern multi-core processor
+---
 
-RAM: 8-16 GB
+## 🚀 Installation & Setup
 
-Storage: 100+ GB
+> 📌 Detailed walkthroughs and automated setup scripts will be released with the first public alpha.
 
-Installation & Setup
-(Detailed instructions will be provided upon initial release.)
+### Step 1: Clone the Repository
 
-Clone the Repository:
+```bash
+git clone https://github.com/[YourUsername]/Lucifer-2.0.git
+cd Lucifer-2.0
+```
 
-git clone https://github.com/[YourUsername]/Jarvis-2.0.git
-cd Jarvis-2.0
+### Step 2: Create Virtual Environment
 
-Set up Python Environment:
-
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-Install Dependencies:
+### Step 3: Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-Download AI Models:
+### Step 4: Download AI Models
 
-A setup script will be provided to download the necessary STT, NLU, and TTS models.
+A `setup.sh` or `setup.bat` script will be provided to auto-download required STT, NLU, and TTS models.
 
-Configure the System:
+### Step 5: Configure Lucifer
 
-Edit the config.yaml file to set up your microphone, speaker, API keys, and other preferences.
+Edit the `config.yaml` file:
 
-Run the Assistant:
+- Select microphone and speakers.
+- Set API keys (if required).
+- Choose your wake word.
+- Customize output behavior.
 
+### Step 6: Run Lucifer
+
+```bash
 python main.py
+```
 
-Future Scope
-Our vision for Jarvis 2.0 extends beyond voice. The modular architecture is designed to be future-proof. The next frontier is Brain-Computer Interface (BCI) integration, allowing for thought-based control by feeding commands from a BCI directly into the NLU engine.
+---
 
-Contributing
-We welcome contributions from the community! If you'd like to help improve Jarvis 2.0, please check out our CONTRIBUTING.md file for guidelines on how to:
+## 🌐 Future Scope
 
-Report bugs and suggest features.
+Lucifer's voice interface is just the beginning.
 
-Submit pull requests.
+### Coming Soon:
 
-Improve documentation.
+- **🧠 BCI (Brain-Computer Interface) Integration**  
+  Thought-to-command pipeline using real-time BCI signals.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+- **📱 Mobile Companion App**  
+  Secure syncing between your phone and PC, locally encrypted.
+
+- **📡 LAN-Based Multi-Device Control**  
+  Orchestrate IoT setups, PCs, displays, etc., over your local network.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the open-source community!
+
+Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) for:
+
+- 📋 Feature requests and bug reports  
+- 🧪 Testing & improvements  
+- 📘 Documentation updates  
+- 🔧 Pull request standards
+
+---
+
+## 📄 License
+
+Lucifer 2.0 is released under the **MIT License**. See the [`LICENSE`](LICENSE) file for details.
+
+---
+
+## 💬 Connect With Us
+
+Stay tuned for:
+
+- Discord community
+- GitHub Discussions
+- Weekly alpha build drops
+
+---
+
+> *“Privacy isn’t a feature. It’s your right. Lucifer is the voice of that freedom.”*
